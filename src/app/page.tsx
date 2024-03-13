@@ -1,23 +1,11 @@
 import { styled } from '@pigment-css/react';
 
-export default function Home() {
-  return (
-    <>
-      <Wrapper>
-        <Button>Inside</Button>
-      </Wrapper>
+import random from '@/helpers/random';
 
-      <Button>Outside</Button>
-    </>
-  );
+export default async function Home() {
+  return <Wrapper>{random(0, 100)}</Wrapper>;
 }
 
-const Wrapper = styled('div')``;
-
-const Button = styled('button')({
-  color: 'red',
-
-  [`${Wrapper} &`]: {
-    color: 'blue',
-  },
-});
+const Wrapper = styled.div`
+  font-weight: bold;
+`;
